@@ -158,14 +158,38 @@
 
     if (mode) document.body.className = mode;
 
-    if (toggleBtn) {
+    if (toggleBtn) 
       toggleBtn.addEventListener("click", () => {
         document.body.classList.toggle("dark");
         document.body.classList.toggle("light");
         localStorage.setItem("site-mode", document.body.className);
       });
-  }
 
+
+document.getElementById("formContato").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+    const msgSucesso = document.getElementById("msgSucesso");
+
+    if (nome === "" || email === "" || mensagem === "") {
+        alert("Por favor, preencha todos os campos!");
+        return;
+    }
+
+    // Exibe mensagem de sucesso
+    msgSucesso.style.display = "block";
+
+    // Limpa o formulário
+    document.getElementById("formContato").reset();
+
+    // Oculta mensagem após 5 segundos
+    setTimeout(() => {
+        msgSucesso.style.display = "none";
+    }, 5000);
+});
   });
 
 

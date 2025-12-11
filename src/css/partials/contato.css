@@ -1,201 +1,104 @@
-#contato{
-  width: 100%;
-  padding: 200px 10%;
-  background-color: var(--cor-fundo);
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+:root {
+    --cor-primaria: #1abc9c;      /* Verde água principal */
+    --cor-primaria-escura: #16a085;
+    --cor-fundo: #f0faf8;         /* Fundo suave esverdeado */
+    --cor-texto: #2c3e50;         /* Cinza escuro */
+    --cor-borda: #c7e9e3;
+    --cor-sucesso: #1abc9c;
 }
 
-@media(max-width: 1200px){
-  #contato{
+/* Container geral da seção */
+#contato {
+    padding: 70px 20px;
+    background: var(--cor-fundo);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Centralização e largura máxima */
+#contato .container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 40px 35px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid var(--cor-borda);
+}
+
+/* Título */
+#contato h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--cor-primaria-escura);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Contêiner de inputs */
+.input-group {
+    margin-bottom: 22px;
+    display: flex;
     flex-direction: column;
-  }
 }
 
-#contato-teclado{
-  position: absolute;
-  top: 7%;
-  right: 30%;
+/* Rótulos */
+.input-group label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: var(--cor-texto);
+    font-size: 15px;
 }
 
-#contato-email{
-  position: absolute;
-  right: 15%;
-  bottom: 10%;
+/* Inputs e textarea */
+.input-group input,
+.input-group textarea {
+    padding: 14px;
+    font-size: 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--cor-texto);
+    transition: all 0.3s ease;
 }
 
-.contato-conteudo{
-  position: relative;
+/* Efeito de foco */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.3);
+    outline: none;
 }
 
-.contato-conteudo h1{
-  font-size: 78px;
-  color: var(--cor-secundaria);
-  margin-bottom: 30px;
-  line-height: 60px;
-}
-
-@media(max-width: 1200px){
-  .contato-conteudo h1{
-    margin-bottom: 100px;
-  }
-}
-
-@media(max-width: 800px){
-  .contato-conteudo h1{
-    font-size: 50px;
-    width: 70%;
-  }
-}
-
-.contato-conteudo h1 span{
-  color: var(--cor-principal);
-}
-
-.contato-conteudo div{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-@media(max-width: 1200px){
-  .contato-conteudo div{
-    width: 20%;
-    position: absolute;
-    right: 3%;
-    top: 0px;
-  }
-}
-
-@media(max-width: 1000px){
-  .contato-conteudo div{
-    visibility: hidden;
-  }
-}
-
-@media(max-width: 860px){
-  .contato-conteudo div{
-    width: 40%;
-    visibility: visible;
-  }
-}
-
-.contato-conteudo div img:nth-child(1){
-  width: 30%;
-}
-
-.contato-conteudo div img:nth-child(2){
-  width: 60%;
-}
-
-#formulario{
-  width: 700px;
-  min-width: 500px;
-  height: 500px;
-  margin-left: 80px;
-}
-
-@media(max-width: 1200px){
-  #formulario{
-    margin-left: 0px;
+/* Botão de envio */
+.btn-enviar {
     width: 100%;
-  }
+    padding: 16px;
+    border: none;
+    background: var(--cor-primaria);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-@media(max-width: 600px){
-  #formulario{
-    min-width: 100%;
-  }
+/* Efeito hover do botão */
+.btn-enviar:hover {
+    background: var(--cor-primaria-escura);
+    transform: scale(1.02);
 }
 
-.form-linha1{
-  width: 100%;
-  display: flex;
-  gap: 30px;
-  margin-bottom: 20px;
-}
-
-@media(max-width: 480px){
-  .form-linha1{
-    flex-direction: column;
-    gap: 15px;
-  }
-}
-
-.form-linha1 div{
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-@media(max-width: 480px){
-  .form-linha1 div{
-    width: 100%;
-  }
-}
-
-.form-linha1 label, .form-linha2 label{
-  color: var(--cor-secundaria);
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-@media(max-width:480px){
-  .form-linha1 label, .form-linha2 label{
-    font-size: 22px; 
-  }
-}
-
-.form-linha1 input{
-  width: 100%;
-  height: 60px;
-  background-color: var(--cor-cinza);
-  border-radius: 16px;
-  border: none;
-  outline: none;
-  color: var(--cor-principal);
-  font-size: 20px;
-  font-weight: bold;
-  padding: 0px 7%;
-}
-
-.form-linha2{
-  display: flex;
-  flex-direction: column;
-}
-
-.form-linha2 textarea{
-  width: 100%;
-  max-width: 110%;
-  min-width: 80%;
-  height: 280px;
-  max-height: 300px;
-  min-height: 260px;
-  background-color: var(--cor-cinza);
-  border-radius: 16px;
-  border: none;
-  outline: none;
-  color: var(--cor-principal);
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px 3%;
-}
-
-.form-linha2 button{
-  color: var(--cor-secundaria);
-  background-color: var(--cor-principal);
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  width: 200px;
-  margin-top: 20px;
-  outline: none;
-  border: none;
-}
-
-.form-linha2 button:hover{
-  background-color: var(--cor-cinza);
-  box-shadow: 4px 4px 4px #000000;
+/* Mensagem de sucesso */
+.sucesso {
+    display: none;
+    margin-top: 25px;
+    text-align: center;
+    color: var(--cor-sucesso);
+    font-weight: bold;
+    background: rgba(26, 188, 156, 0.15);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-primaria);
 }
